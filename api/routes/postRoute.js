@@ -3,5 +3,8 @@ module.exports = (server) => {
     
     server.route("/posts")
     .get(postController.listAllPosts)
-    .post(postController.createAPost);
+    .post(postController.createAPost)
+    .get(postController.getAPost)
+    .put(postController.updateAPost)
+    .delete(postController.deleteAPost);
 }

@@ -10,6 +10,9 @@ server.use(express.json());
 const postRoute = require('./api/routes/postRoutes'); //les routes vont etre passées au serveur
 postRoute(server); //faire la connexion à la base de donnée
 
+const commentRoute = require('./api/routes/commentRoute');
+server.use("./api/routes", commentRoute);
+
 server.listen(port.hostname); //tourner le serveur
 app.get('/', function (req, res) {
   res.send('Hello World')
